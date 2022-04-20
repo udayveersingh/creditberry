@@ -111,6 +111,8 @@ class PaymentHelper
     $controller = new AnetController\CreateTransactionController($request);
     $response = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::SANDBOX);
     
+    echo '<pre>';
+    print_r($response);
 
     if ($response != null) {
         // Check to see if the API request was successfully received and acted upon
@@ -119,6 +121,8 @@ class PaymentHelper
             // and parse it to display the results of authorizing the card
             $tresponse = $response->getTransactionResponse();
         
+            print_r($tresponse);
+            die('ffff');
             if ($tresponse != null && $tresponse->getMessages() != null) {
                 echo " Successfully created transaction with Transaction ID: " . $tresponse->getTransId() . "\n";
                 echo " Transaction Response Code: " . $tresponse->getResponseCode() . "\n";
