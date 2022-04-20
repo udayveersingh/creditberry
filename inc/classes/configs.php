@@ -349,7 +349,7 @@ class CB_CONFIGS
         $data->authnet_url = "https://apitest.authorize.net";*/
         $data->authnet_login_id = "3C67wBbz9hwR";
         $data->authnet_transaction_key = "376RTrM4Cs9j357u";
-        $data->authnet_url = "https://apitest.authorize.net"; 
+        $data->authnet_url = "https://api.authorize.net"; 
         $data->mcd_url = "http://newdev.mycreditdash.com";
         $data->salt = "kjsdkfh45987dkfjhksjdhfkj466748tyewijfkjsdfhdfskjh43534534hkrlp9078984h$%#gg";
         $data->env = "dev";
