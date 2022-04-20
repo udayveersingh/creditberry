@@ -135,7 +135,7 @@ class PaymentHelper
 
         $response = $controller->executeWithApiResponse($configs->authnet_url);
         /*echo '<pre>';
-        print_r($response); */
+        print_r($response); */   
         $msg = '';
         if ($response != null) {
             if ($response->getMessages()->getResultCode() == Constants::RESPONSE_OK) {
