@@ -97,6 +97,8 @@ class PaymentHelper
 
             // Create the controller and get the response
             $controller = new AnetController\CreateTransactionController($request);
+            echo '<pre>';
+            print_r($controller);
         } else {
             // Subscription Type Info
             $subscription = new AnetAPI\ARBSubscriptionType();
@@ -139,6 +141,7 @@ class PaymentHelper
         $response = $controller->executeWithApiResponse($configs->authnet_url);
        echo '<pre>';
         print_r($response);   
+        die('ddd');
         $msg = '';
         if ($response != null) {
             if ($response->getMessages()->getResultCode() == Constants::RESPONSE_OK) {
