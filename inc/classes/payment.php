@@ -23,6 +23,9 @@ class PaymentHelper
      */
     public static function makePayment($post = [], $user = null, $recurring = false)
     {
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
         $configs = CB_CONFIGS::configs();
 
         if (!is_null($user)) {
@@ -134,8 +137,8 @@ class PaymentHelper
         }
 
         $response = $controller->executeWithApiResponse($configs->authnet_url);
-        /*echo '<pre>';
-        print_r($response); */   
+       /* echo '<pre>';
+        print_r($response);   */
         $msg = '';
         if ($response != null) {
             if ($response->getMessages()->getResultCode() == Constants::RESPONSE_OK) {
@@ -203,7 +206,7 @@ class PaymentHelper
                 }
             } else {
                 $msg = $response->getMessages()->getMessage()[0]->getText();
-                $msg .= $response->getTransactionResponse()->getErrors()[0]->getErrorText();
+               // $msg .= $response->getTransactionResponse()->getErrors()[0]->getErrorText();
                 $return = ['status' => 'error', 'message' => "Payment Failed : " . $msg];
             }
         } else {
