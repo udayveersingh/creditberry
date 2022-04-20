@@ -41,7 +41,7 @@ class PaymentHelper
     
     // Set the transaction's refId
     $refId = 'ref' . time();
-
+    $amount = '1.50';
     // Create the payment data for a credit card
     $creditCard = new AnetAPI\CreditCardType();
     $creditCard->setCardNumber("4111111111111111");
