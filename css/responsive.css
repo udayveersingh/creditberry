@@ -1,0 +1,69 @@
+@media(max-width:1199px)
+{
+.menubar .nav ul li a{padding: 12px 6px;font-size: 16px;}		
+}
+
+@media(max-width:991px)
+{
+p{line-height: 25px;}	
+section.vc_section{padding:40px 0;}	
+section.vc_section.hero {padding:40px 0 20px !important;}
+h5, .h5, h4, .h4{font-size: 1rem;}
+.h1, h1 {font-size: 1.8rem;}
+.h3, h3 {font-size: 1.3rem;}
+.price-box .pricing-head h1{font-size:50px;}
+.hero-intro h1{font-size:30px;}
+.hero-intro p{font-size: 17px;line-height: 25px;}
+.vc_btn3.vc_btn3-size-md,.vc_btn3.vc_btn3-size-md.vc_btn3-style-outline{padding: 9px 30px;font-size:13px;}
+.vc_btn3.vc_btn3-size-md.vc_btn3-style-outline-custom{padding:6px 30px;font-size:13px;}
+.hero-intro{padding-left:15px}
+.feature-box .vc_single_image-wrapper img{max-height:110px;width: auto;}	
+.contact-info, .form-box{padding: 40px 20px;}
+.contact-info .wpb_wrapper .vc_row p{font-size: 16px;margin-left:10px}	
+}
+@media(max-width:767px)
+{
+body{padding-top: 60px;}
+.mobmenur-container{margin-top: 5px;}	
+.hero .wpb_single_image img{max-height:250px;width: auto;}
+.hero-intro{margin-top:15px}	
+.hero-intro h1{font-size: 25px;}
+.vc_btn3.vc_btn3-size-md, .vc_btn3.vc_btn3-size-md.vc_btn3-style-outline{padding:9px 23px;font-size:12px;}
+.vc_btn3.vc_btn3-size-md.vc_btn3-style-outline-custom{font-size:12px;padding:6px 23px;}	
+.wpb_content_element{margin-bottom: 15px;}
+.vc_section.vc_section-has-fill, .vc_section.vc_section-has-fill + .vc_row-full-width + .vc_section, .vc_section.vc_section-has-fill + .vc_section{padding-top:40px;}
+.feature-box{margin-bottom: 60px;}
+.feature-box .vc_single_image-wrapper{margin-top: -50px;}
+.feature-box:last-child{margin-bottom:0}
+.section-title{margin:0 0 30px;}
+.feature-box .wpb_wrapper{padding:0 10px 15px;}
+.section-title .vc_custom_heading{font-size: 22px;}
+.section-title::after{bottom:0;}
+.price-box .pricing-list ul li{font-size: 13px;padding: 10px 0;}
+.price-box .vc_btn3-container{margin:-38px 0 0;}
+.pricing-section{max-height:100%;}
+.advantages{padding-top:0}
+h2, .h2 {font-size: 1.2rem;}
+.section-title.vc_custom_heading.left{margin-bottom:40px;}
+.Advantages .vc_col-has-fill > .vc_column-inner{padding-top:0}	
+.vc_section .wpb_single_image.vc_align_left{text-align: center;}
+.vc_section .wpb_single_image img{max-height:150px;width:auto}
+.wpb_single_image .vc_single_image-wrapper{margin-bottom: 10px;}
+.section-title.vc_custom_heading.left{text-align: center !important;}
+.section-title.vc_custom_heading.left::after{left: 50%;margin-left: -30px;}
+p{text-align: justify;}
+.call-to-action .vc_column-inner{padding:0 !important}
+.call-to-action .vc_custom_heading{font-size:25px !important;}
+.call-to-action p{font-size:16px !important;}
+.call-to-action .vc_btn3-inline{margin-top:5px}
+.scrollup i{right:15px;}
+.wpb-js-composer .vc_tta.vc_general .vc_tta-panel-title > a {position: relative;color:#000 !important;text-align:left}
+.wpb-js-composer .vc_tta.vc_general .vc_tta-panel-title > a::after{top: 25%;content: "\f3d0";position: absolute;font-family: ionicons;right: 15px;top: 26%;font-size: 25px;color: #ed1f24;}
+.wpb-js-composer .vc_tta-panel-body {padding: 25px 15px 10px !important;}
+.wpb_single_image.vc_align_right{text-align:center;}
+.contact-info .vc_icon_element {float: none;}
+.contact-info .vc_icon_element.vc_icon_element-outer.vc_icon_element-align-right {text-align: center !important;}
+.contact-info .wpb_wrapper .vc_row p{margin:10px 0 0;text-align:center}
+#footer{padding:0 0 20px;}
+
+}

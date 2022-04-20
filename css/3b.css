@@ -1,0 +1,309 @@
+#cb-page, #cb-login, #cb-questions, #complete-process, #cb-messages, #cb-demo-thankyou {
+    padding-top: 90px;
+}
+
+#cbForm label, 
+#demoForm label, 
+#complete-process label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #767b7f;
+}
+
+#cbForm .terms-box, 
+#demoForm .terms-box, 
+#complete-process .terms-box {
+    height: 130px;
+    overflow: auto;
+    overflow-y: scroll;
+    border-color: #999 !important;
+    color: #333;
+    font-size: 12px;
+    border-radius: 0 !important;
+    background-clip: padding-box;
+    -webkit-border-image: none;
+    -o-border-image: none;
+    border-image: none;
+    border-style: none none none solid !important;
+    border-width: 0 0 0 4px !important;
+    text-transform: uppercase !important;
+    word-spacing: 3px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+}
+
+#cbForm .terms-box ul, 
+#demoForm .terms-box ul, 
+#cbForm .terms-box ol, 
+#demoForm .terms-box ol, 
+#complete-process .terms-box ul, #complete-process .terms-box ol {
+    padding-left: 10px;
+}
+
+#cbForm .terms-box table, 
+#demoForm .terms-box table, 
+#complete-process .terms-box table {
+    width: 100%;
+}
+
+#cbForm .terms-box table td, 
+#demoForm .terms-box table td, 
+#complete-process .terms-box table td {
+    padding: 10px;
+}
+
+.btn-3b-theme {
+    width: 100%;
+    margin-bottom: 50px;
+    background: #25689a !important;
+}
+
+.register-bottom .body-txt {
+    font-weight: 600;
+}
+
+.register-bottom {
+    text-align: center;
+}
+
+table.table-condensed td, table.table-condensed th {
+    padding: 2px 5px;
+}
+
+::placeholder {
+    color: #ccc;
+    font-size: 14px;
+}
+
+#cbForm input, 
+#demoForm input, 
+#cbForm select, 
+#demoForm select, 
+#complete-process input, #complete-process select {
+    font-size: 14px;
+}
+
+.error {
+    color: #a94442 !important;
+    border-color: #a94442 !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+}
+
+.lbl-chk {
+    padding-bottom: 30px;
+    padding-left: 10px;
+}
+
+.agree {
+    position: relative;
+}
+
+.agree label.error {
+    display: block;
+    position: absolute;
+    top: 25px;
+    left: 27px;
+}
+
+.loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid #266899;
+    width: 70px;
+    height: 70px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader-parent {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    display: none;
+}
+
+.cb-wrapper {
+    background: #003359;
+    box-shadow: -6px 9px 15px #f3f3f3;
+    padding: 45px 35px;
+}
+
+.cb-wrapper input {
+    font-weight: 300;
+    font-size: 14px;
+    margin-top: 20px !important;
+    width: 100%;
+    border: 1px solid #7a99b5;
+    min-height: 65px;
+    border-radius: 2px;
+    background: none;
+    padding-left: 25px;
+    color: #7a99b5;
+}
+
+.cb-wrapper input:focus {
+    background-color: #0f3359;
+    color: #7a99b5;
+}
+
+.cb-wrapper input::placeholder {
+    color: #7a99b5;
+}
+
+.btn-cb {
+    background: #e32311 !important;
+    padding: 14px 0 !important;
+    height: auto;
+    border: none;
+    font-size: 20px !important;
+    border-radius: 40px !important;
+    font-weight: 600 !important;
+}
+
+#cb-login .frm {
+    margin: auto;
+}
+
+.row.question-list {
+    padding-top: 40px;
+    padding-bottom: 30px;
+    font-size: 14px !important;
+    border-bottom: 1px solid #e0dfdf;
+}
+
+.submit-questions {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.alert b, .alert strong {
+    font-weight: 600;
+}
+
+/* #cb-questions{ */
+
+/* display: none; */
+
+/* } */
+
+.textblock p {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 16px !important;
+    color: #999;
+    font-weight: 300 !important;
+}
+
+#cb-questions h5 {
+    margin-bottom: 30px;
+}
+
+.home-page-header {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    background: #fff !important;
+    z-index: 9999;
+}
+
+#content-vw {
+    padding-top: 35px;
+}
+
+h5.vc_custom_heading.pricing-title {
+    max-height: 100px;
+    height: 100px;
+    vertical-align: middle;
+    font-size: 17px;
+}
+
+.funnel-logo {
+    margin-bottom: 30px;
+}
+
+.funnel-logo img {
+    max-width: 300px;
+    max-height: 200px;
+}
+
+.error404 #content-vw {
+    padding-top: 110px;
+}
+
+.single .mobmenu-push-wrap>.container, .archive .mobmenu-push-wrap>.container, .search .mobmenu-push-wrap>.container {
+    padding-top: 110px;
+}
+
+
+.page-template-demo-thankyou #topbar li.menu-item:not(.top-phone-number),
+.page-template-demo-registration #topbar li.menu-item:not(.top-phone-number),
+.page-template-demo-questions #topbar li.menu-item:not(.top-phone-number),
+.page-funnel-user #topbar li.menu-item:not(.top-phone-number){
+    display: none !important;
+}
+
+.page-template-demo-thankyou .widget.zoom-social-icons-widget,
+.page-template-demo-registration .widget.zoom-social-icons-widget,
+.page-template-demo-questions .widget.zoom-social-icons-widget,
+.page-funnel-user .widget.zoom-social-icons-widget {
+    display: none !important;
+}
+
+.page-template-demo-thankyou #menu-footer-menu li.menu-item:not(.footer-terms):not(.footer-privacy),
+.page-template-demo-registration #menu-footer-menu li.menu-item:not(.footer-terms):not(.footer-privacy),
+.page-template-demo-questions #menu-footer-menu li.menu-item:not(.footer-terms):not(.footer-privacy),
+.page-funnel-user #menu-footer-menu li.menu-item:not(.footer-terms):not(.footer-privacy) {
+    display: none !important;
+}
+
+.page-template-demo-thankyou .logo,
+.page-template-demo-registration .logo,
+.page-template-demo-questions .logo,
+.page-funnel-user .logo{
+    display: inline-block !important;
+}
+
+.page-template-demo-thankyou .logo:last-child,
+.page-template-demo-registration .logo:last-child,
+.page-template-demo-questions .logo:last-child,
+.page-funnel-user .logo:last-child {
+    margin-left: 20px;
+}
+.white-lable-logo{
+    max-height: 75px !important;
+    width: auto !important;
+}
+.datepicker{
+    z-index: 9999 !important;
+}
