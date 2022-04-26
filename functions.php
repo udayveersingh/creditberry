@@ -403,3 +403,8 @@ require get_template_directory() . '/inc/classes/register-process.php';
 require get_template_directory() . '/inc/classes/questions.php';
 require get_template_directory() . '/inc/classes/authentication.php';
 require get_template_directory() . '/inc/classes/white-labeling.php';
+
+
+/*ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);*/

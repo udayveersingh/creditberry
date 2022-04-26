@@ -13,32 +13,41 @@ get_header(); ?>
                 <div class="loader"></div>
             </div>
             <div class="row">
+                <div class="col-md-12">
                 <?php
-                require get_template_directory() . '/page-template/message-error.php';
-                require get_template_directory() . '/page-template/message-info.php';
-                require get_template_directory() . '/page-template/message-success.php';
-
-                if (isset($_SESSION['thankyou']['ref']) && !empty($_SESSION['thankyou']['ref'])) {
-                    ?>
-                    <div class="main-box clearfix">
-                        <div class="main-box-body clearfix">
-                            <h3>Thank you for your interest</h3>
-                            <?php if ($_SESSION['thankyou']['ref'] == 'login') : ?>
-                                <p>Click below link to get started on our new portal.</p>
-                            <?php else : ?>
-                                <p>Please check your email for more information</p>
-                                <p>Or</p>
-                                <p>Log into your account on our new portal
-                                </p>
-                            <?php endif; ?>
-                        </div>
-                        <div class="main-box-footer">
-                            <a class="btn btn-primary" href="<?php echo $_SESSION['thankyou']['redirect']; ?>">Get started</a>
-                        </div>
-                    </div>
-                <?php
-                }
+                    require get_template_directory() . '/page-template/message-error.php';
+                    require get_template_directory() . '/page-template/message-info.php';
+                    require get_template_directory() . '/page-template/message-success.php';
                 ?>
+                <div class="page-content">
+                    <?php while ( have_posts() ) : the_post();
+                        get_template_part( 'template-parts/page-content'); 
+                    endwhile; ?>
+                </div>
+
+                    <?php 
+                    if (isset($_SESSION['thankyou']['ref']) && !empty($_SESSION['thankyou']['ref'])) {
+                        ?>
+                        <div class="main-box clearfix">
+                            <div class="main-box-body clearfix">
+                                <h3>Thank you for your interest</h3>
+                                <?php if ($_SESSION['thankyou']['ref'] == 'login') : ?>
+                                    <p>Click below link to get started on our new portal.</p>
+                                <?php else : ?>
+                                    <p>Please check your email for more information</p>
+                                    <p>Or</p>
+                                    <p>Log into your account on our new portal
+                                    </p>
+                                <?php endif; ?>
+                            </div>
+                            <div class="main-box-footer">
+                                <a class="btn btn-primary" href="<?php echo $_SESSION['thankyou']['redirect']; ?>">Get started</a>
+                            </div>
+                        </div>
+                    <?php
+                    }
+                ?>
+                </div>
             </div>
         </div>
     </div>

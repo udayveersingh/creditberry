@@ -17,7 +17,7 @@ class Questions
     public function checkRedirections()
     {
         if (is_page('questions')) {
-
+            //echo '<pre>'; print_r($_SESSION); die;
             // redirect to LOGIN page is not loggedin
             CB_CONFIGS::is_user_loggedin();
 
@@ -58,7 +58,7 @@ class Questions
         $tblUserToken = tblUserToken;
 
         if (isset($_POST['authenticate-questions']) && !empty($_POST['authenticate-questions'])) {
-
+            // echo '<pre>'; print_r($_POST); die;
             $userData = $wpdb->get_row("SELECT $tblUser.*, $tblOrder.response, $tblOrder.totalAmount,$tblOrder.dateCreated as orderDate, $tblProduct.alias, $tblAddress.address1,$tblAddress.city,$tblAddress.zip, $tblLogin.raw_pass,$tblState.stateCode FROM $tblUser INNER JOIN $tblOrder ON $tblUser.id=$tblOrder.userId INNER JOIN $tblProduct ON $tblOrder.productId=$tblProduct.id INNER JOIN $tblAddress ON $tblUser.addressId=$tblAddress.id INNER JOIN $tblLogin ON $tblUser.id=$tblLogin.userId INNER JOIN $tblState ON $tblAddress.stateId=$tblState.id where $tblUser.id = " . $_SESSION['userId']);
             update_option('cb-final-mcd-data', $userData);
             $post = array();
@@ -105,6 +105,7 @@ class Questions
                 exit();
             endif;
 
+            //echo '<pre>'; print_r($questionResponseData); die;
             switch ($questionResponseData->response->status):
                 case 'failed':
 
@@ -224,7 +225,14 @@ class Questions
                         $uuid = $userData->clientKey;
 
                         // forward to thank you action/page
-                        Questions::thankYou($ref, $uuid);
+
+                        //Commented 
+                        // Questions::thankYou($ref, $uuid);
+
+                        // Added Custom Redirection
+                        wp_redirect(site_url().'/thank-you');
+                        exit();
+                        
                     endif;
 
                     break;
@@ -279,7 +287,7 @@ class Questions
     public function checkUserAuthToken()
     {
         $token = CB_CONFIGS::checkUserAutenticatedWithTU();
-
+        
         if ($token) {
             $_SESSION['cb_error'] = "Your account is already authenticated with TU.";
 

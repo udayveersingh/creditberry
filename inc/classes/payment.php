@@ -38,8 +38,9 @@ class PaymentHelper
             $address = $post['address'];
             $city = $post['city'];
             $state = $post['state'];
-            $zip = $post['zip'];
+            $zip = $post['zipcode'];
         }
+
 
         $merchantAuthentication = new AnetAPI\MerchantAuthenticationType();
         $merchantAuthentication->setName($configs->authnet_login_id);
@@ -53,7 +54,7 @@ class PaymentHelper
         $creditCard->setCardCode($cardCvv);
 
         if ($recurring == false) {
-            // Add the payment data to a paymentType object
+             // Add the payment data to a paymentType object
             $paymentOne = new AnetAPI\PaymentType();
             $paymentOne->setCreditCard($creditCard);
 
@@ -62,19 +63,22 @@ class PaymentHelper
             $order->setInvoiceNumber(uniqid());
             $order->setDescription("CB Payment");
 
+
             // Set the customer's Bill To address
             $customerAddress = new AnetAPI\CustomerAddressType();
             $customerAddress->setFirstName($firstName);
             $customerAddress->setLastName($lastName);
+            //$customerAddress->setCompany("Souveniropolis");
             $customerAddress->setAddress($address);
             $customerAddress->setCity($city);
             $customerAddress->setState($state);
             $customerAddress->setZip($zip);
             $customerAddress->setCountry("USA");
 
-            // Set the customer's identifying information
+            // Set the customer's identifying information            
             $customerData = new AnetAPI\CustomerDataType();
             $customerData->setType("individual");
+            $customerData->setId(uniqid());
             $customerData->setEmail($email);
 
             // Create a TransactionRequestType object and add the previous objects to it
@@ -94,6 +98,7 @@ class PaymentHelper
 
             // Create the controller and get the response
             $controller = new AnetController\CreateTransactionController($request);
+            //$response = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::SANDBOX);
         } else {
             // Subscription Type Info
             $subscription = new AnetAPI\ARBSubscriptionType();
@@ -133,9 +138,9 @@ class PaymentHelper
             $controller = new AnetController\ARBCreateSubscriptionController($request);
         }
 
-        $response = $controller->executeWithApiResponse($configs->authnet_url);
-        /*echo '<pre>';
-        print_r($response); */
+       $response = $controller->executeWithApiResponse($configs->authnet_url);
+        //$response = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::SANDBOX);
+       //echo 'With Customer Details: <pre>'; print_r($response); die;
         $msg = '';
         if ($response != null) {
             if ($response->getMessages()->getResultCode() == Constants::RESPONSE_OK) {

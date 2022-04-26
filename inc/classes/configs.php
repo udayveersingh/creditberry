@@ -187,6 +187,7 @@ class CB_CONFIGS
 
     public function cb_check_url_redictions()
     {
+        //echo '<pre>'; print_r($_SESSION); echo '</pre>';
         if (is_page('3b')) {
             if (isset($_SESSION['userId'])) {
                 CB_CONFIGS::redirectToUserSpecificPage();
@@ -194,7 +195,7 @@ class CB_CONFIGS
         }
 
         if (is_page('cb-messages')) {
-            if ($_SESSION['cb_error'] == ""  || $_SESSION['cb_info'] == "") {
+            if ( (isset($_SESSION['cb_error']) && $_SESSION['cb_error'] == "")  || (isset($_SESSION['cb_info']) && $_SESSION['cb_info'] == "") ){
                 wp_redirect(site_url());
                 exit();
             }
@@ -347,8 +348,15 @@ class CB_CONFIGS
         /*$data->authnet_login_id = "77Sr9JnHpV";
         $data->authnet_transaction_key = "4sB888q65dFc2PB2";
         $data->authnet_url = "https://apitest.authorize.net";*/
+
+        // Commented by Amit
         $data->authnet_login_id = "3C67wBbz9hwR";
         $data->authnet_transaction_key = "376RTrM4Cs9j357u";
+
+        //Added by Amit
+        /*$data->authnet_login_id = "5q6z8DjuD4AS";
+        $data->authnet_transaction_key = "4Q3CT3Mf24Wwb973";*/
+
         $data->authnet_url = "https://apitest.authorize.net"; 
         $data->mcd_url = "http://newdev.mycreditdash.com";
         $data->salt = "kjsdkfh45987dkfjhksjdhfkj466748tyewijfkjsdfhdfskjh43534534hkrlp9078984h$%#gg";
@@ -477,10 +485,12 @@ class CB_CONFIGS
             'City' => $post['city'],
             'Zipcode' => $post['zipcode'],
             'IP' => $_SERVER["REMOTE_ADDR"],
-            'Ssn' => str_replace(array('-', '-'), array('', ''), $post['ssn'])
+            'Ssn' => str_replace(array('-', '-'), array('', ''), $post['ssn']),
+            'addedBy'   =>  4
         );
         $post['segment'] = 'authenticate';
         $data = Questions::sendAnswersToTU($post);
+        // echo '<pre>'; print_r($data); die;
         $error = "";
         
         if (empty($data) || !isset($data->response->status)){

@@ -57,10 +57,10 @@ class RegisterProcess
             $email = $post['email'];
 
             $error = "";
-            /*$tuError = CB_CONFIGS::checkAlreadyAuthenticateWithTU($post);
+            $tuError = CB_CONFIGS::checkAlreadyAuthenticateWithTU($post);
             if($tuError){
                 $error = $tuError;
-            }*/
+            }
 
             $isUniqueEmail = self::checkUniqueUsername($email);
             $checkEmailExistsInMCD = self::checkEmailExistsInMCD($email);
@@ -114,7 +114,7 @@ class RegisterProcess
                     try {
                         // make payment
                         $subscription = PaymentHelper::makePayment($post, null, $isRecurring);
-
+                        //echo '<pre>'; print_r($subscription); die;
                         if ($subscription['status'] == 'success') {
 
                             if (!$isRecurring) {
